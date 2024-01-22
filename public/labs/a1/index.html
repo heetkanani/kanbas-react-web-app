@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Assigment 1- Lab 1- HTML Tags</title>
+    </head>
+    <body>
+        <h1>Assignment 1</h1>
+        <h2>Forms</h2>
+        <form>
+            <br>
+            <label>Username: </label>
+            <input type="text" title="Please enter a username" placeholder="Heet"/>
+            </br>
+            <label>Password:</label>
+            <input type="password"/>
+            </br>
+            <label>Salary: </label>
+            <input min="100000" max="200000" type="number"/>
+            </br>
+            <label>Date of Birth:</label> 
+            <input value="2024-01-11" type="date"/>
+            </br>
+        <h2>Radio Buttons</h2>
+            <label>Color: </label>
+            <input type="color"/>
+            </br>
+            <input id="color-red" name="fav-color" type="radio"/>
+            <label for="color-red">Red</label>
+            <input name="fav-color" type="radio"/>Green
+            <input name="fav-color" type="radio"/>Blue
+            </br>
+        <h2>CheckBoxes</h2>
+            <label>Favourite Genre:</label>
+            <input value="" name="fav-genre" type="checkbox"/>Horror
+            <input name="fav-genre" type="checkbox"/>Comedy
+            <input name="fav-genre" type="checkbox"/>Action
+        </br>
+        <h2>Dropdowns</h2>
+            <label>Favourite Books:</label></br>
+            <label>Select One</label>
+            <select>
+                <option value="VAL1">Harry Porter</option>
+                <option value="VAL2" selected>Dune</option>
+                <option value="VAL3">Sherlok</option>
+             </select></br>
+             <label>Select Many:</label>
+             <select multiple>
+                <option value="VAL1">Harry Porter</option>
+                <option value="VAL2" selected>Dune</option>
+                <option value="VAL3">Sherlok</option>
+             </select>
+        <h2>Text boxes</h2>
+            <form id="textarea">
+            <label>Biography:</label><br/>
+            <textarea cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+            </form>                   
+        <h2>Buttons</h2>
+            <button type="button">Click here!</button>     
+            <h2>File upload</h2>
+            <input type="file"/>
+            </form>
+        <h2>Headings</h2>
+            Text documents are often broken up into several sections and subsections. 
+            Each section is usually prefaced with a short title or heading that attempts
+            to summarize the topic of the section it precedes. For instance this paragraph 
+            is preceded by the heading Heading Tags. The font of the section headings are 
+            usually larger and bolder than the plain text and their subsection headings.
+        <h2>Paragraphs</h2>
+            <p>Text documents are often broken up into several sections and subsections. 
+                Each section is usually prefaced with a short title or heading that attempts
+                to summarize the topic of the section it precedes. For instance this paragraph 
+                is preceded by the heading Heading Tags. The font of the section headings are 
+                usually larger and bolder than the plain text and their subsection headings. 
+            </p>
+        <h2>Lists</h2>
+        <h3>Ordered Lists</h3>
+            <ol>
+                <li>Apples</li>
+                <li>Oranges</li>
+                <li>Bananas</li>
+            </ol>
+        <h3>Unordered Lists</h3>
+            <ul>
+                <li>Apples</li>
+                <li>Oranges</li>
+                <li>Bananas</li>
+
+            </ul>
+        <h2>Tables</h2>
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Items
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apples</td>
+                        <td>$20</td>
+                    </tr>
+                    <tr>
+                        <td>Oranges</td>
+                        <td>$18</td>
+                    </tr>
+                </tbody>
+            </table>
+        <h2>Image tag</h2>
+            <label>Loading an image from the internet:</label><br/>
+            <img width="400px"
+                src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"/>
+            <br/>
+            <label>Loading a local image:</label><br/>
+            <img src="moon.jpg" height="200px"/>
+
+            <h2>Other HTML field types</h2>
+            <label for="text-fields-email"> Email: </label>
+            <input type="email" placeholder="abc@gmail.com"/><br/>
+            <label for="text-fields-salary-start">
+                Starting salary:
+            </label>
+            <input type="number" placeholder="1000"value="100000"/><br/>
+            <label for="text-fields-rating"> 
+                Rating:
+            </label>
+            <input type="range" id="text-fields-rating" placeholder="Heet" max="5" value="4"/><br/>
+            <label for="text-fields-dob">
+                Date of birth: 
+            </label>
+            <input type="date" value="2000-01-21"/><br/>            
+        <h2>Anchor Tag</h2>
+            <a href="aa.com">American Airlines</a> 
+            <br/>
+            <label>Please</label>
+            <a href="https://www.lipsum.com">click here</a>
+            to get dummy text<br/>
+
+            <label>Checkout my <a href="other-page.html">other page</a></label>
+    
+    </body>
+</html>
+
+<!-- http://localhost:3000/Kanbas/Courses/Home/screen.html -->
