@@ -1,0 +1,66 @@
+.wd-navigation-navbar > ul{
+padding: 12px;
+}
+
+.wd-navigation-navbar > ul > li > a{
+text-decoration: none;
+color:red;
+}
+
+.wd-navigation-navbar > ul > li{
+  list-style: none;
+  }
+.wd-navigation {
+  background-color: white;
+  list-style: none;
+  padding: 0px;
+  width: 125px;
+  margin: 0px;
+  margin-left: 20px;
+}
+.wd-navigation li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.wd-navigation li.wd-active {
+  border-left: 2px solid black;
+}
+.wd-navigation li.wd-active a {
+  color: black;
+}
+.wd-navigation a {
+  color: red;
+  text-decoration: none;
+}
+
+
+.wd-kanbas-navigation-navbar {
+  width: 100%;
+  height: max-content;
+}
+.wd-kanbas-navigation-navbar li {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  list-style: none;
+}
+.wd-kanbas-navigation-navbar li.wd-active {
+  background-color: white;
+}
+.wd-kanbas-navigation-navbar li.wd-active a {
+  color: red;
+}
+.wd-kanbas-navigation-navbar a {
+  text-align: center;
+  color: red;
+  text-decoration: none;
+}
+.wd-kanbas-navigation-navbar a i {
+  color: red;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+

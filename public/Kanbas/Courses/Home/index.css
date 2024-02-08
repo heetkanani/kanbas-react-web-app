@@ -1,0 +1,11 @@
+.wd-course-status {
+  margin: 5px;
+}
+
+.wd-course-status,
+.wd-course-status * {
+  border-radius: 0%;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
