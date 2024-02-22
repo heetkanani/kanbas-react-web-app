@@ -1,0 +1,59 @@
+[
+    {
+    "_id": "A101",
+    "title": "Propulsion Assignment",
+    "date": "01/26/2024",
+    "week": "4",
+    "time": "11:59am",
+    "points": "100",
+    "course": "RS101"
+    },
+    {
+    "_id": "A102",
+    "title": "Combustion Analysis",
+    "date": "01/30/2024",
+    "week": "4",
+    "time": "11:59am",
+    "points": "100",
+    "course": "RS101"
+    },
+    {
+    "_id": "A103",
+    "title": "Nozzle Design Project",
+    "date": "02/15/2024",
+    "week": "2",
+    "time": "11:59am",
+    "points": "100",
+    "course": "RS101"
+    },
+    {
+    "_id": "A201",
+    "title": "Aerodynamics Quiz",
+    "course": "RS102"
+    },
+    {
+    "_id": "A202",
+    "title": "Flow Analysis",
+    "course": "RS102"
+    },
+    {
+    "_id": "A203",
+    "title": "Heating Analysis",
+    "course": "RS102"
+    },
+    {
+    "_id": "A301",
+    "title": "Structural Design Task",
+    "course": "RS103"
+    },
+    {
+    "_id": "A302",
+    "title": "Orbital Calculations",
+    "course": "RS103"
+    },
+    {
+    "_id": "A303",
+    "title": "Systems Engineering Exam",
+    "course": "RS103"
+    }
+    ]

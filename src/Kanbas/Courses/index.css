@@ -1,0 +1,16 @@
+.wd-course-page {
+    left: 168px; 
+    top: 50px;
+    overflow-y: scroll;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .wd-course-page {
+      position: relative;
+      left: 0;
+      top:0;
+    }
+  };
