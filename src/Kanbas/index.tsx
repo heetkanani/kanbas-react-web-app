@@ -11,7 +11,7 @@ function Kanbas() {
   const [course, setCourse] = useState({
     _id: "0", name: "New Course", number: "New Number",
     startDate: "2023-09-10", endDate: "2023-12-15",
-    image: "/images/reactjs.jpg"
+    image: "reactjs.webp"
   });
 
   const addNewCourse = () => {
