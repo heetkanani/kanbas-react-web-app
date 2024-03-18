@@ -10,7 +10,7 @@ import Grades from "./Grades";
 import './index.css';
 import NavResponsive from "./NavResponsive";
 
-function Courses() {
+function Courses({ courses }: { courses: any[]; }) {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   return (
