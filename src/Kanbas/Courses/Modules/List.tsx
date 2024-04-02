@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.css";
 import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { KanbasState } from "../../store";
-import { addModule, deleteModule, setModule, updateModule } from "./reducer";
+import { addModule, deleteModule, setModule, updateModule,  setModules } from "./reducer";
+import * as client from "./client";
+
 function ModuleList() {
   // const { courseId } = useParams();
   // const [moduleList, setModuleList] = useState<any[]>(modules);
@@ -39,13 +41,40 @@ function ModuleList() {
   //   setModuleList(newModuleList);
   // };
   const { courseId } = useParams();
+  console.log(courseId);
+  
+
+  useEffect(() => {
+    client.findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseId]);
+
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+
+
+  const handleAddModule = () => {
+    client.createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
 
   const moduleList = useSelector((state: KanbasState) => 
   state.modulesReducer.modules);
 const module = useSelector((state: KanbasState) => 
   state.modulesReducer.module);
 const dispatch = useDispatch();
-const [selectedModule, setSelectedModule] = useState(moduleList[0]);
+const [selectedModule, setSelectedModule] = useState(moduleList.length > 0 && moduleList[0]);
 
 
   return (
@@ -74,8 +103,8 @@ const [selectedModule, setSelectedModule] = useState(moduleList[0]);
             onChange={(e) =>
               dispatch(setModule({ ...module, description: e.target.value }))
             }/>
-          <button className="btn btn-success rounded-2 px-4" onClick={() => dispatch(addModule({ ...module, course: courseId }))}>Add</button>
-          <button className="btn btn-warning rounded-2 px-4" onClick={() => dispatch(updateModule(module))}>Update</button>
+          <button className="btn btn-success rounded-2 px-4" onClick={handleAddModule}>Add</button>
+          <button className="btn btn-warning rounded-2 px-4" onClick={handleUpdateModule}>Update</button>
       </li>
         {moduleList
               .filter((module) => module.course === courseId)
@@ -91,7 +120,7 @@ const [selectedModule, setSelectedModule] = useState(moduleList[0]);
                 Edit
                 </button>
                 <button className="btn btn-danger rounded-2 px-4"
-                onClick={() => dispatch(deleteModule(module._id))}>
+                onClick={() => handleDeleteModule(module._id)}>
                 Delete
                 </button>
                 <FaCheckCircle className="text-success" />

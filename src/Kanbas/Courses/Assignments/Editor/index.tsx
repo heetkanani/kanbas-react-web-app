@@ -5,6 +5,8 @@ import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addAssignment, updateAssignment } from "../assignmentsReducer";
 import { AssignmentState } from "../../../store";
+import * as client from '../client';
+
 function AssignmentEditor() {
   const { assignmentId } = useParams();
   const { courseId } = useParams();
@@ -12,11 +14,16 @@ function AssignmentEditor() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSave = () => {
-    dispatch(addAssignment({ ...assignmentEdit, course: courseId }));
+    client.createAssignment(courseId, assignmentEdit).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   const handleUpdate = () => {
-    dispatch(updateAssignment(assignmentEdit));
+    client.updateAssignment(assignmentEdit).then((assignment) => {
+      dispatch(updateAssignment(assignment));
+  });
+
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   const assignmentList = useSelector(

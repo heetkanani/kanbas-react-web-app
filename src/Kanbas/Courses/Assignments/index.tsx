@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCheckCircle, FaEllipsisV, FaPencilAlt, FaPlusCircle } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { BsPencilSquare } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { AssignmentState } from "../../store";
-import { deleteAssignment, selectAssignment } from "./assignmentsReducer";
+import { deleteAssignment, selectAssignment,setAssignments } from "./assignmentsReducer";
+import * as client from './client';
+
 
 function Assignments() {
   const { courseId } = useParams();
   const [isDelete, setIsDelete] = useState(false);
+
+  useEffect(()=>{
+    client.findAssignmentsForCourse(courseId).then((assignments) => {
+      dispatch(setAssignments(assignments));
+    });
+  } , [courseId])
+
   const assignmentList = useSelector(
     (state: AssignmentState) => state.assignmentsReducer.assignments
   );
@@ -16,8 +25,11 @@ function Assignments() {
     (state: AssignmentState) => state.assignmentsReducer.assignment
   );
 
-  const btnDelete = () => {
-    dispatch(deleteAssignment(assignment._id))
+  const btnDelete = (assignmentId:string) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId))
+  });
+
     setIsDelete(false);
   };
 
@@ -107,7 +119,7 @@ function Assignments() {
                 <button
                   type="button"
                   className="btn btn-danger"
-                  onClick={btnDelete}
+                  onClick={()=>btnDelete(assignment._id)}
                 >
                   Delete
                 </button>
