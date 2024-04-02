@@ -1,6 +1,10 @@
 import axios from "axios";
-const ASSIGNMENT_API = "http://localhost:4000/api/assignments";
-const COURSES_API = "http://localhost:4000/api/courses";
+const ASSIGNMENT_API = "https://kanbas-node-server-app-tb8k.onrender.com/api/assignments"; 
+
+const COURSES_API = "https://kanbas-node-server-app-tb8k.onrender.com/api/courses";
+
+
+
 
 export const createAssignment = async(courseId:any , assignment:any) => {
   const response = await axios
