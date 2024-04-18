@@ -7,8 +7,11 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import {HashRouter} from "react-router-dom";
 import {Routes, Route, Navigate} from "react-router";
 import Kanbas from './Kanbas';
+import axios from 'axios';
 
 function App() {
+  axios.defaults.withCredentials = true;
+
   return (
     <HashRouter>
       <div>
